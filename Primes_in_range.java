@@ -1,27 +1,34 @@
 import java.util.*;
-public class Prime{
-    static boolean is_prime(int n)
+public class rug{
+    public static Boolean isprime(int n)
     {
-        int p=0;
-        if(n<2){
-            return(p==1);
+        if(n<2)
+        {
+            return false;
         }
-        for(int i=2;i<(int)Math.sqrt(n)+1;i++){
-            if(n%i==0){
-                p+=1;
-                break;
+        else
+        {
+            for(int i=2;i<=Math.sqrt(n);i++)
+            {
+                if(n%i==0)
+                {
+                    return false;
+                }
             }
+            return true;
         }
-        return(p==0);
     }
-    public static void main(String[] args){
-        Scanner s=new Scanner (System.in);
-        int a=s.nextInt();
-        int b=s.nextInt();
+    public static void main(String args[])
+    {
+        Scanner r = new Scanner(System.in);
+        int a=r.nextInt();
+        int b=r.nextInt();
         int c=0;
-        for(int i=a;i<=b;i++){
-            if(is_prime(i)){
-                c+=1;
+        for(int i=a;i<=b;i++)
+        {
+            if(isprime(i))
+            {
+                c++;
             }
         }
         System.out.println(c);
